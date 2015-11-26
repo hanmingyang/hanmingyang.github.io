@@ -68,55 +68,62 @@
     <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/26/hexo/" class="article-date">
-  <time datetime="2015-11-26T05:19:46.000Z" itemprop="datePublished">2015-11-26</time>
+  <time datetime="2015-11-26T08:48:15.000Z" itemprop="datePublished">2015-11-26</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/26/hexo/">hexo</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="什么hexo">什么hexo</h1><p>hexo是一个基于Node.js的静态博客程序。可以快速的生成静态页面并能托管在github上。</p>
-<h1 id="为什么选择hexo">为什么选择hexo</h1><p>看下作者来自台湾的Tommy351的原话：</p>
-<blockquote>
-<ul>
-<li>不可思议的快速 ─ 只要一眨眼静态文件即生成完成</li>
-<li>支持 Markdown </li>
-<li>仅需一道指令即可部署到 GitHub Pages 和 Heroku</li>
-<li>已移植 Octopress 插件</li>
-<li>高扩展性、自订性</li>
-<li>兼容于 Windows, Mac &amp; Linux</li>
-</ul>
-</blockquote>
-<h1 id="怎样搭建hexo博客">怎样搭建hexo博客</h1><h3 id="准备工作（一）：安装Git">准备工作（一）：安装Git</h3><pre><code>安装之前可以确认一下本地是否安装了git，打开命令行输入git
-
-
-<span class="bullet">- </span>安装[<span class="link_label">homebrew</span>](<span class="link_url">http://brew.sh/index_zh-cn.html</span>)，然后通过homebrew再来安装Git.
-<span class="bullet">- </span>通过mac系统的Xcode安装
-</code></pre><h3 id="准备工作（二）：安装Node-js">准备工作（二）：安装Node.js</h3><h3 id="准备工作（三）：安装hexo">准备工作（三）：安装hexo</h3><pre><code><span class="blockquote">&gt; - 使用命令行：npm install -g hexo </span>
-<span class="blockquote">&gt; - 创建hexo文件夹</span>
-<span class="blockquote">&gt; - 进入文件夹</span>
-<span class="blockquote">&gt; - 使用命令行：hexo init</span>
-<span class="blockquote">&gt; - 根据提示安装依赖包：npm install</span>
-<span class="blockquote">&gt; - 生成静态页面：hexo generate 或者 hexo g</span>
-<span class="blockquote">&gt; - 启动hexo服务：hexo server</span>
-</code></pre><p>好了，至此，本地博客已经搭建起来了.只是本地的</p>
-
+        <h1 id="hexo安装篇">hexo安装篇</h1><h2 id="来段开场">来段开场</h2><p>开篇之前先来说说什么是hexo?这个东西可以做什么。</p>
+<p>最近一段时间在考虑写博客的事情，因为之前有些使用百度空间和一些其他类似博客平台的经历，想自己搭建个私人博客平台，机缘巧合吧，在学习nodeJS的时候看到了关于hexo的介绍。心动之后立马尝试，原来搭建博客可以这么方便快捷。</p>
+<p>hexo是一个基于Node.js的静态博客程序。是静态的，在这里如果对博客功能需求大的话，hexo可能满足不了你。</p>
+<hr>
+<h2 id="怎样搭建hexo博客">怎样搭建hexo博客</h2><p>先说说开始搭建之前需要准备哪些东西。括号里是地址说明：</p>
+<p>1.<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></p>
+<p>2.Git （mac系统推荐通过Xcode安装，或者通过<a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">homebrew</a></p>
+<p>3.<a href="https://github.com/" target="_blank" rel="external">github</a> 账号一枚</p>
+<p>判断node安装成功可以在命令行里输入：</p>
+<pre><code><span class="keyword">node</span><span class="identifier"> </span><span class="title">-v</span>
+</code></pre><p>如果出现v+数字组合表示的当前node版本号就表示成功啦。</p>
+<p>判断Git安装成功可以在命令行里输入：</p>
+<pre><code>git <span class="comment">--version </span>
+</code></pre><p>出现 git version 数字序列的版本号就表示安装成功啦。</p>
+<p>准备工作就绪之后，就开始我们hexo搭建吧。</p>
+<p>首先在命令行里输入命令：</p>
+<pre><code>hexo <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span>
+</code></pre><p>假如安装过程中有出现报错字样的话，还有类似Administrator等英文字眼的可以尝试下用sudo来提升安装权限：</p>
+<pre><code>sudo hexo <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span>
+</code></pre><p>执行成功之后在命令行里输入：</p>
+<pre><code>hexo <span class="property">version</span>
+</code></pre><p>可以看到hexo相关信息表示安装成功。</p>
+<p>接下来我们要做的事就是新建一个文件夹，文件夹的名称随意，最好和博客相关，比如superTest。然后通过命令行进入该文件夹：</p>
+<pre><code><span class="built_in">cd</span> superTest
+</code></pre><p>当前的文件夹是空的，之后执行命令行：</p>
+<pre><code><span class="title">hexo</span> init
+</code></pre><p>执行成功之后superTest文件夹会多出很多文件和文件夹出来。如图：</p>
+<p><img src="http://7xoo43.com1.z0.glb.clouddn.com/屏幕快照%202015-11-26%20下午4.31.49.png" alt="初始化blog文件夹"></p>
+<p> 初始化superTest文件夹成功后，该文件夹里面的内容。如图：</p>
+<p><img src="http://7xoo43.com1.z0.glb.clouddn.com/屏幕快照%202015-11-26%20下午4.37.04.png" alt=""></p>
+<p>之后按照命令行提示输入命令：</p>
+<pre><code>npm <span class="keyword">install</span>
+</code></pre><p>安装过程中会出现警报，报错之类的提示，不要急，不要慌。看到下图这个样子就没事，忽略即可：</p>
+<p><img src="http://7xoo43.com1.z0.glb.clouddn.com/屏幕快照%202015-11-26%20下午4.41.27.png" alt=""></p>
+<p>文件夹里多出个node_modules文件夹</p>
+<p><img src="http://7xoo43.com1.z0.glb.clouddn.com/屏幕快照%202015-11-26%20下午4.42.27.png" alt=""></p>
+<p>成功了！</p>
+<p>接下来在命令行输入两个命令：</p>
+<pre><code>hexo g
+hexo <span class="keyword">server</span>
+</code></pre><p>之后看到这样的字样就表示hexo博客本地服务启动成功了。点击这个地址就可以预览了。</p>
+<pre><code>INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> <span class="built_in">stop</span>.
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/26/hexo/" data-id="cihftrhjq00017en6blqcdb5f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/26/hexo/" data-id="cihfzzy4i0001zln60t0xm7q2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -161,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/26/hello-world/" data-id="cihftrhir00007en6cb0rcg6u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/26/hello-world/" data-id="cihfzzy400000zln6yuog2vcx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +205,7 @@
       <ul>
         
           <li>
-            <a href="/2015/11/26/hexo/">hexo</a>
+            <a href="/2015/11/26/hexo/">(no title)</a>
           </li>
         
           <li>
