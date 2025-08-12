@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传和口腔宿迁有限公司口腔诊所</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36BFFA',
+                        neutral: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral min-h-screen flex flex-col">
+    <!-- 顶部装饰条 -->
+    <div class="bg-primary h-2 w-full"></div>
+    
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 py-12 md:py-20 flex-grow flex flex-col items-center justify-center">
+        <!-- 诊所标志/图标 -->
+        <div class="w-20 h-20 md:w-24 md:h-24 bg-primary/10 rounded-full flex items-center justify-center mb-8">
+            <i class="fa fa-stethoscope text-primary text-4xl md:text-5xl"></i>
+        </div>
+        
+        <!-- 标题 -->
+        <h1 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-center text-gray-800 mb-10 leading-tight text-shadow">
+            传和口腔宿迁有限公司口腔诊所
+        </h1>
+        
+        <!-- 信息卡片容器 -->
+        <div class="w-full max-w-md grid gap-6">
+            <!-- 联系电话卡片 -->
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                        <i class="fa fa-phone text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-gray-500 text-sm font-medium mb-1">联系电话</h2>
+                        <p class="text-gray-800 text-xl font-semibold">15050953093</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 地址卡片 -->
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i class="fa fa-map-marker text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-gray-500 text-sm font-medium mb-1">诊所地址</h2>
+                        <p class="text-gray-800 text-lg font-semibold">宿城区义乌国际星城三期30#幢发展大道商铺07号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-white py-6 border-t border-gray-200">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>© 2023 传和口腔宿迁有限公司口腔诊所 版权所有</p>
+        </div>
+    </footer>
+    
+    <!-- 简单的交互效果 -->
+    <script>
+        // 为联系电话添加点击拨号功能（在移动设备上）
+        document.addEventListener('DOMContentLoaded', () => {
+            const phoneElement = document.querySelector('.fa-phone').parentElement.nextElementSibling.querySelector('p');
+            const phoneNumber = phoneElement.textContent;
+            
+            const phoneLink = document.createElement('a');
+            phoneLink.href = `tel:${phoneNumber}`;
+            phoneLink.textContent = phoneNumber;
+            phoneLink.className = phoneElement.className;
+            
+            phoneElement.parentNode.replaceChild(phoneLink, phoneElement);
+            
+            // 为地址添加地图链接
+            const addressElement = document.querySelector('.fa-map-marker').parentElement.nextElementSibling.querySelector('p');
+            const addressText = addressElement.textContent;
+            
+            const addressLink = document.createElement('a');
+            addressLink.href = `https://maps.baidu.com/search/${encodeURIComponent(addressText)}`;
+            addressLink.textContent = addressText;
+            addressLink.className = addressElement.className;
+            addressLink.target = '_blank';
+            
+            addressElement.parentNode.replaceChild(addressLink, addressElement);
+        });
+    </script>
+</body>
+</html>
